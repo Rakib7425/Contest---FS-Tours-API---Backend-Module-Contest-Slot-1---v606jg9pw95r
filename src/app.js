@@ -38,7 +38,7 @@ app.put('/tours/:id', (req, res) => {
     // Save the updated data to tours.json
     fs.writeFileSync(`${__dirname}/data/tours.json`, JSON.stringify(tourDetails));
 
-    res.json({ tour: tourDetails[index] });
+    res.json({ tour: tourDetails[index],message: "Tour updated successfully" });
   } else {
     res.status(404).json({ message: 'Tour not found' });
   }
