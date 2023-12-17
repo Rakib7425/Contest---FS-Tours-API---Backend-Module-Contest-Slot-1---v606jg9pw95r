@@ -9,7 +9,7 @@ const tourDetails = JSON.parse(fs.readFileSync(`${__dirname}/data/tours.json`));
 
 app.get('/tours', (req, res) => {
   // Get all tours
-  res.json( tours: tourDetails);
+  res.json( {tours: [tourDetails]});
 });
 
 app.post('/tours', (req, res) => {
