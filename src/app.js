@@ -22,8 +22,8 @@ app.post('/tours', (req, res) => {
 
   // Save the updated data to tours.json
   fs.writeFileSync(`${__dirname}/data/tours.json`, JSON.stringify(tourDetails));
-
-  res.status(200).json({ tour: newTour });
+// tour: newTour
+  res.status(200).json({ message: "Tour added successfully" });
 });
 
 app.put('/tours/:id', (req, res) => {
@@ -37,8 +37,9 @@ app.put('/tours/:id', (req, res) => {
 
     // Save the updated data to tours.json
     fs.writeFileSync(`${__dirname}/data/tours.json`, JSON.stringify(tourDetails));
-
-    res.json({ tour: tourDetails[index],message: "Tour updated successfully" });
+    
+ // tour: tourDetails[index],
+    res.json({ message: "Tour updated successfully" });
   } else {
     res.status(404).json({ message: 'Tour not found' });
   }
@@ -54,8 +55,8 @@ app.delete('/tours/:id', (req, res) => {
 
     // Save the updated data to tours.json
     fs.writeFileSync(`${__dirname}/data/tours.json`, JSON.stringify(tourDetails));
-
-    res.json({ message: 'Tour deleted', tour: deletedTour });
+// , tour: deletedTour 
+    res.json({ message: 'Tour deleted successfully'});
   } else {
     res.status(404).json({ message: 'Tour not found' });
   }
