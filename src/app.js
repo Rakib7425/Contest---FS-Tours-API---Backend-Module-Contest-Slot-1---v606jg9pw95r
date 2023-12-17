@@ -9,7 +9,7 @@ const tourDetails = JSON.parse(fs.readFileSync(`${__dirname}/data/tours.json`));
 
 app.get('/tours', (req, res) => {
   // Get all tours
-  res.json({ tours: tourDetails });
+  res.json( tours: tourDetails);
 });
 
 app.post('/tours', (req, res) => {
@@ -23,7 +23,7 @@ app.post('/tours', (req, res) => {
   // Save the updated data to tours.json
   fs.writeFileSync(`${__dirname}/data/tours.json`, JSON.stringify(tourDetails));
 
-  res.status(201).json({ tour: newTour });
+  res.status(200).json({ tour: newTour });
 });
 
 app.put('/tours/:id', (req, res) => {
